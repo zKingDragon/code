@@ -124,10 +124,8 @@ export default function HowToPlaySection() {
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { key: '↑ ↓ ← →', action: 'MOVER' },
-                { key: 'SPACE', action: 'PULAR' },
-                { key: 'E', action: 'INTERAGIR' },
-                { key: 'ESC', action: 'MENU' }
+                { key: 'W A S D', action: 'MOVER' },
+                { key: 'SPACE', action: 'INTERAGIR' },
               ].map((control, index) => (
                 <div key={index} className="bg-[#2c1810] border-4 border-[#32936f] p-4 text-center">
                   <div className="bg-[#d14728] border-2 border-[#1f6032] px-3 py-2 mb-2">
