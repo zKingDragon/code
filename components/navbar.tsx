@@ -8,30 +8,42 @@ export default function Navbar() {
           <div className="font-['Press_Start_2P'] text-[#ffe29a] text-xs sm:text-sm">
             O CORAÇÃO DA MATA
           </div>
-          <div className="flex gap-4 sm:gap-6">
+          <div className="flex gap-3 sm:gap-6 flex-wrap">
             <Link
               href="/#inicio"
-              className="font-['Press_Start_2P'] text-[#ffe29a] text-[10px] sm:text-xs hover:text-[#d14728] transition-colors"
+              className="font-['Press_Start_2P'] text-[#ffe29a] text-[9px] sm:text-xs hover:text-[#d14728] transition-colors"
             >
               Início
             </Link>
             <Link
               href="/#sobre"
-              className="font-['Press_Start_2P'] text-[#ffe29a] text-[10px] sm:text-xs hover:text-[#d14728] transition-colors"
+              className="font-['Press_Start_2P'] text-[#ffe29a] text-[9px] sm:text-xs hover:text-[#d14728] transition-colors"
             >
               Sobre
             </Link>
             <Link
-              href="/login"
-              className="font-['Press_Start_2P'] text-[#ffe29a] text-[10px] sm:text-xs hover:text-[#d14728] transition-colors"
+              href="/#historia"
+              className="font-['Press_Start_2P'] text-[#ffe29a] text-[9px] sm:text-xs hover:text-[#d14728] transition-colors"
             >
-              Login
+              História
             </Link>
             <Link
-              href="/signup"
-              className="font-['Press_Start_2P'] text-[#ffe29a] text-[10px] sm:text-xs hover:text-[#d14728] transition-colors"
+              href="/#personagens"
+              className="font-['Press_Start_2P'] text-[#ffe29a] text-[9px] sm:text-xs hover:text-[#d14728] transition-colors"
             >
-              Cadastro
+              Personagens
+            </Link>
+            <Link
+              href="/#como-jogar"
+              className="font-['Press_Start_2P'] text-[#ffe29a] text-[9px] sm:text-xs hover:text-[#d14728] transition-colors"
+            >
+              Como Jogar
+            </Link>
+            <Link
+              href="/login"
+              className="font-['Press_Start_2P'] text-[#ffe29a] text-[9px] sm:text-xs hover:text-[#d14728] transition-colors"
+            >
+              Login
             </Link>
           </div>
         </div>
