@@ -1,14 +1,19 @@
+'use client'
+
 import Link from 'next/link'
+import { useAuth } from '@/lib/auth-context'
 
 export default function Navbar() {
+  const { isAuthenticated, user, logout } = useAuth()
+
   return (
     <nav className="relative bg-[#3b2618] border-b-4 border-[#1f6032] shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="font-['Press_Start_2P'] text-[#ffe29a] text-xs sm:text-sm">
-            O CORAÇÃO DA MATA
+            CORAÇÃO DA MATA
           </div>
-          <div className="flex gap-3 sm:gap-6 flex-wrap">
+          <div className="flex gap-3 sm:gap-6 flex-wrap items-center">
             <Link
               href="/#inicio"
               className="font-['Press_Start_2P'] text-[#ffe29a] text-[9px] sm:text-xs hover:text-[#d14728] transition-colors"
@@ -39,12 +44,29 @@ export default function Navbar() {
             >
               Como Jogar
             </Link>
-            <Link
-              href="/login"
-              className="font-['Press_Start_2P'] text-[#ffe29a] text-[9px] sm:text-xs hover:text-[#d14728] transition-colors"
-            >
-              Login
-            </Link>
+            {isAuthenticated ? (
+              <>
+                <Link
+                  href="/dashboard"
+                  className="font-['Press_Start_2P'] text-[#ffe29a] text-[9px] sm:text-xs hover:text-[#d14728] transition-colors"
+                >
+                  Dashboard
+                </Link>
+                <button
+                  onClick={logout}
+                  className="font-['Press_Start_2P'] text-[#ffe29a] text-[9px] sm:text-xs hover:text-[#d14728] transition-colors"
+                >
+                  Sair
+                </button>
+              </>
+            ) : (
+              <Link
+                href="/login"
+                className="font-['Press_Start_2P'] text-[#ffe29a] text-[9px] sm:text-xs hover:text-[#d14728] transition-colors"
+              >
+                Login
+              </Link>
+            )}
           </div>
         </div>
       </div>

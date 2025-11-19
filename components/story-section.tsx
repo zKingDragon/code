@@ -29,13 +29,7 @@ export default function StorySection() {
                 <div className="bg-[#2c1810] border-4 border-[#32936f] p-8 aspect-square flex items-center justify-center">
                   {/* Placeholder for Curupira pixel art */}
                   <div className="text-center">
-                    <div className="w-48 h-48 mx-auto mb-4 bg-[#d14728] border-4 border-[#1f6032] relative pixelated" style={{
-                      clipPath: 'polygon(30% 0%, 70% 0%, 80% 10%, 85% 20%, 90% 40%, 85% 60%, 90% 80%, 80% 100%, 70% 100%, 60% 95%, 50% 100%, 40% 95%, 30% 100%, 20% 100%, 10% 80%, 15% 60%, 10% 40%, 15% 20%, 20% 10%)'
-                    }}>
-                      <div className="absolute top-[15%] left-[35%] w-4 h-4 bg-[#ffe29a] rounded-full" />
-                      <div className="absolute top-[15%] right-[35%] w-4 h-4 bg-[#ffe29a] rounded-full" />
-                      <div className="absolute bottom-[40%] left-1/2 -translate-x-1/2 w-12 h-8 bg-[#1f6032]" />
-                    </div>
+                    <Image src="/curupiraDeLado.gif" alt="Curupira Pixel Art" width={300} height={200} className="mx-auto mb-4 pixelated" />
                     <p className="font-['VT323'] text-[#32936f] text-xl">ARTE DO CURUPIRA</p>
                   </div>
                 </div>

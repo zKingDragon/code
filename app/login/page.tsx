@@ -10,18 +10,21 @@ export default function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState('')
   const router = useRouter()
   const { login } = useAuth()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
+    setError('')
     
     try {
       await login(email, password)
       router.push('/dashboard')
-    } catch (error) {
+    } catch (error: any) {
       console.error('Login error:', error)
+      setError(error.message || 'Erro ao fazer login')
     } finally {
       setIsLoading(false)
     }
@@ -61,6 +64,24 @@ export default function LoginPage() {
               <p className="font-body text-center text-[#8b4513] mb-8">
                 Entre para acessar o jogo
               </p>
+
+              {error && (
+                <div className="mb-4 p-4 bg-[#d14728] border-2 border-[#8b4513] pixel-borders">
+                  <p className="font-body text-sm text-[#f5e6d3] text-center mb-2">
+                    ⚠️ {error}
+                  </p>
+                  {error.includes('Verifique seus dados ou crie uma conta') && (
+                    <div className="text-center mt-2">
+                      <Link 
+                        href="/signup" 
+                        className="inline-block bg-[#6b8e23] border-2 border-[#2d5016] px-4 py-2 font-pixel text-xs text-[#f5e6d3] hover:bg-[#556b1e] transition-colors"
+                      >
+                        CRIAR CONTA AGORA
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              )}
 
               <form className="space-y-6" onSubmit={handleSubmit}>
                 {/* Email field */}
@@ -109,7 +130,7 @@ export default function LoginPage() {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full bg-[#6b8e23] border-4 border-[#2d5016] px-8 py-4 font-pixel text-lg text-[#f5e6d3] hover:bg-[#556b1e] transition-colors shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] active:shadow-none active:translate-x-1 active:translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-[#6b8e23] border-4 border-[#2d5016] px-8 py-4 font-pixel text-lg text-[#f5e6d3] hover:bg-[#556b1e] transition-colors shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] active:shadow-none active:translate-x-1 active:translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                 >
                   {isLoading ? 'ENTRANDO...' : 'ENTRAR'}
                 </button>

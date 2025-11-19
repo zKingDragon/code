@@ -20,19 +20,38 @@ export default function SignUpPage() {
     e.preventDefault()
     setError('')
     
+    // Validação de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      setError('Por favor, insira um email válido (exemplo: usuario@email.com)')
+      return
+    }
+
+    // Validação de nome
+    if (name.trim().length < 2) {
+      setError('O nome deve ter pelo menos 2 caracteres')
+      return
+    }
+    
     if (password !== confirmPassword) {
       setError('As senhas não coincidem')
+      return
+    }
+
+    if (password.length < 6) {
+      setError('A senha deve ter pelo menos 6 caracteres')
       return
     }
     
     setIsLoading(true)
     
     try {
+      console.log('Tentando criar conta com:', { name, email, passwordLength: password.length })
       await signup(name, email, password)
       router.push('/dashboard')
-    } catch (error) {
+    } catch (error: any) {
       console.error('Signup error:', error)
-      setError('Erro ao criar conta')
+      setError(error.message || 'Erro ao criar conta')
     } finally {
       setIsLoading(false)
     }
@@ -78,7 +97,7 @@ export default function SignUpPage() {
               </div>
             )}
 
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form className="space-y-6" onSubmit={handleSubmit} autoComplete="off">
               {/* Nome field */}
               <div>
                 <label htmlFor="name" className="block font-body text-sm text-[#2d5016] mb-2">
@@ -91,9 +110,11 @@ export default function SignUpPage() {
                   <input
                     type="text"
                     id="name"
+                    name="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
+                    autoComplete="off"
                     className="w-full bg-[#f5e6d3] border-2 border-[#8b4513] pl-12 pr-4 py-3 font-body text-[#2d5016] focus:outline-none focus:border-[#6b8e23]"
                     placeholder="Seu nome"
                   />
@@ -112,9 +133,11 @@ export default function SignUpPage() {
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
+                    autoComplete="off"
                     className="w-full bg-[#f5e6d3] border-2 border-[#8b4513] pl-12 pr-4 py-3 font-body text-[#2d5016] focus:outline-none focus:border-[#6b8e23]"
                     placeholder="seu@email.com"
                   />
@@ -133,9 +156,12 @@ export default function SignUpPage() {
                   <input
                     type="password"
                     id="password"
+                    name="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
+                    autoComplete="new-password"
+                    minLength={6}
                     className="w-full bg-[#f5e6d3] border-2 border-[#8b4513] pl-12 pr-4 py-3 font-body text-[#2d5016] focus:outline-none focus:border-[#6b8e23]"
                     placeholder="••••••••"
                   />
@@ -154,9 +180,12 @@ export default function SignUpPage() {
                   <input
                     type="password"
                     id="confirm-password"
+                    name="confirmPassword"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     required
+                    autoComplete="new-password"
+                    minLength={6}
                     className="w-full bg-[#f5e6d3] border-2 border-[#8b4513] pl-12 pr-4 py-3 font-body text-[#2d5016] focus:outline-none focus:border-[#6b8e23]"
                     placeholder="••••••••"
                   />
@@ -167,7 +196,7 @@ export default function SignUpPage() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-[#6b8e23] border-4 border-[#2d5016] px-8 py-4 font-pixel text-sm text-[#f5e6d3] hover:bg-[#556b1e] transition-colors shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] active:shadow-none active:translate-x-1 active:translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-[#6b8e23] border-4 border-[#2d5016] px-8 py-4 font-pixel text-sm text-[#f5e6d3] hover:bg-[#556b1e] transition-colors shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] active:shadow-none active:translate-x-1 active:translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
               >
                 {isLoading ? 'CRIANDO...' : 'CRIAR CONTA'}
               </button>

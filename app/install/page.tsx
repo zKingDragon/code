@@ -109,10 +109,10 @@ export default function InstallPage() {
       <div className="relative z-10 container mx-auto px-4 py-12">
         <div className="mb-8 animate-fadeInDown">
           <Link 
-            href="/"
+            href="/dashboard"
             className="inline-flex items-center gap-2 font-['VT323'] text-[#ffe29a] text-xl hover:text-[#d14728] transition-all hover:translate-x-[-4px]"
           >
-            ← Voltar para home
+            ← Voltar para dashboard
           </Link>
         </div>
 
@@ -131,14 +131,14 @@ export default function InstallPage() {
               <div className="grid md:grid-cols-3 gap-6 mb-12">
                 {/* Windows */}
                 <div className="bg-[#3b2618] border-4 border-[#1f6032] p-6 text-center hover:border-[#d14728] transition-all duration-300 hover:scale-105 hover:-translate-y-2 animate-fadeInUp" style={{ animationDelay: '0.1s' }}>
-                  <div className="text-6xl mb-4 transition-transform duration-300 hover:scale-110 inline-block">💻</div>
+                  <div className="text-6xl mb-4 transition-transform duration-300 hover:scale-110 inline-block">🪟</div>
                   <h3 className="font-['Press_Start_2P'] text-[#ffe29a] text-sm mb-4 leading-relaxed">
                     WINDOWS
                   </h3>
                   <p className="font-['VT323'] text-[#32936f] text-lg mb-6">
                     Windows 10 ou superior
                   </p>
-                  <button className="w-full font-['Press_Start_2P'] bg-[#d14728] hover:bg-[#32936f] text-[#ffe29a] px-6 py-3 text-xs border-4 border-[#1f6032] shadow-[4px_4px_0_0_rgba(31,96,50,1)] hover:shadow-[2px_2px_0_0_rgba(31,96,50,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all active:scale-95">
+                  <button className="w-full font-['Press_Start_2P'] bg-[#d14728] hover:bg-[#32936f] text-[#ffe29a] px-6 py-3 text-xs border-4 border-[#1f6032] shadow-[4px_4px_0_0_rgba(31,96,50,1)] hover:shadow-[2px_2px_0_0_rgba(31,96,50,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all active:scale-95 cursor-pointer">
                     BAIXAR
                   </button>
                 </div>
@@ -152,7 +152,7 @@ export default function InstallPage() {
                   <p className="font-['VT323'] text-[#32936f] text-lg mb-6">
                     macOS 11 ou superior
                   </p>
-                  <button className="w-full font-['Press_Start_2P'] bg-[#d14728] hover:bg-[#32936f] text-[#ffe29a] px-6 py-3 text-xs border-4 border-[#1f6032] shadow-[4px_4px_0_0_rgba(31,96,50,1)] hover:shadow-[2px_2px_0_0_rgba(31,96,50,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all active:scale-95">
+                  <button className="w-full font-['Press_Start_2P'] bg-[#d14728] hover:bg-[#32936f] text-[#ffe29a] px-6 py-3 text-xs border-4 border-[#1f6032] shadow-[4px_4px_0_0_rgba(31,96,50,1)] hover:shadow-[2px_2px_0_0_rgba(31,96,50,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all active:scale-95 cursor-pointer">
                     BAIXAR
                   </button>
                 </div>
@@ -166,7 +166,7 @@ export default function InstallPage() {
                   <p className="font-['VT323'] text-[#32936f] text-lg mb-6">
                     Ubuntu 20.04 ou superior
                   </p>
-                  <button className="w-full font-['Press_Start_2P'] bg-[#d14728] hover:bg-[#32936f] text-[#ffe29a] px-6 py-3 text-xs border-4 border-[#1f6032] shadow-[4px_4px_0_0_rgba(31,96,50,1)] hover:shadow-[2px_2px_0_0_rgba(31,96,50,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all active:scale-95">
+                  <button className="w-full font-['Press_Start_2P'] bg-[#d14728] hover:bg-[#32936f] text-[#ffe29a] px-6 py-3 text-xs border-4 border-[#1f6032] shadow-[4px_4px_0_0_rgba(31,96,50,1)] hover:shadow-[2px_2px_0_0_rgba(31,96,50,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all active:scale-95 cursor-pointer">
                     BAIXAR
                   </button>
                 </div>

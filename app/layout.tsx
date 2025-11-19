@@ -17,7 +17,7 @@ const vt323 = VT323({
 })
 
 export const metadata: Metadata = {
-  title: 'O Coração da Mata - Aventura Retrô na Selva',
+  title: 'Coração da Mata - Aventura Retrô na Selva',
   description: 'Explore a floresta pixelada em uma jornada épica no estilo 8-bit',
   generator: 'v0.app',
   icons: {

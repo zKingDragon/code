@@ -1,28 +1,30 @@
+import Image from 'next/image'
+
 export default function CharactersSection() {
   const characters = [
     {
-      name: 'EXPLORADOR 1',
-      role: 'O Aventureiro',
-      description: 'Corajoso e destemido, sempre em busca da próxima aventura. Especialista em exploração.',
+      name: 'EXPLORADORA',
+      role: 'A Aventureira',
+      description: 'Corajosa e destemida, sempre em busca da próxima aventura. Se prepare para jogar com ela.',
       color: '#d14728',
-      bgColor: '#3b2618',
-      icon: '🎒'
+      bgColor: '#1f6032',
+      image: '/aventureiraFrente.gif'
     },
     {
-      name: 'EXPLORADOR 2',
-      role: 'O Estrategista',
+      name: 'O SENHOR DA CABANA',
+      role: 'Antigo Morador',
       description: 'Inteligente e cauteloso, prefere planejar cada movimento. Mestre em resolver puzzles.',
       color: '#32936f',
       bgColor: '#2c1810',
-      icon: '🧭'
+      image: '/aventureiraFrente.gif'
     },
     {
       name: 'CHEFE DA EMPRESA',
       role: 'O Ambicioso',
       description: 'Misterioso líder da expedição. Será que suas intenções são realmente nobres?',
       color: '#ffe29a',
-      bgColor: '#1f6032',
-      icon: '💼'
+      bgColor: '#3b2618',
+      image: '/aventureiraFrente.gif'
     },
     {
       name: 'CURUPIRA',
@@ -30,7 +32,7 @@ export default function CharactersSection() {
       description: 'Protetor ancestral da selva. Com pés virados para trás, ele caça aqueles que ameaçam a natureza.',
       color: '#d14728',
       bgColor: '#1f6032',
-      icon: '👣'
+      image: '/curupiraBaseFrente.gif'
     }
   ]
 
@@ -70,10 +72,14 @@ export default function CharactersSection() {
                   <div className="absolute inset-0 border-4 border-[#32936f]/20" />
                   <div className="absolute inset-4 border-4 border-[#32936f]/10" />
                   
-                  {/* Character icon */}
-                  <div className="text-6xl sm:text-7xl filter drop-shadow-lg transform group-hover:scale-110 transition-transform duration-300">
-                    {character.icon}
-                  </div>
+                  {/* Character icon or image */}
+                  <Image 
+                    src={character.image} 
+                    alt={character.name}
+                    width={280}
+                    height={280}
+                    className="pixelated object-contain transform group-hover:scale-110 transition-transform duration-300"
+                  />
 
                   {/* Scanline effect */}
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#000]/10 to-transparent pointer-events-none" 
@@ -84,10 +90,6 @@ export default function CharactersSection() {
                   />
                 </div>
 
-                {/* Level indicator */}
-                <div className="absolute -top-3 -right-3 bg-[#d14728] border-4 border-[#1f6032] px-3 py-1">
-                  <span className="font-['Press_Start_2P'] text-[#ffe29a] text-xs">LV.{index + 1}</span>
-                </div>
               </div>
 
               {/* Character info */}
@@ -110,27 +112,29 @@ export default function CharactersSection() {
                 </p>
               </div>
 
-              {/* Stats bar decoration */}
-              <div className="mt-6 space-y-2">
-                <div className="flex items-center gap-2">
-                  <span className="font-['Press_Start_2P'] text-[#ffe29a] text-xs">HP</span>
-                  <div className="flex-1 h-3 bg-[#2c1810] border-2 border-[#1f6032]">
-                    <div 
-                      className="h-full bg-[#d14728]"
-                      style={{ width: `${80 + (index * 5)}%` }}
-                    />
+              {/* Stats bar decoration - only for first character */}
+              {index === 0 && (
+                <div className="mt-6 space-y-2">
+                  <div className="flex items-center gap-2">
+                    <span className="font-['Press_Start_2P'] text-[#ffe29a] text-xs">HP</span>
+                    <div className="flex-1 h-3 bg-[#2c1810] border-2 border-[#1f6032]">
+                      <div 
+                        className="h-full bg-[#d14728]"
+                        style={{ width: `${80 + (index * 5)}%` }}
+                      />
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="font-['Press_Start_2P'] text-[#ffe29a] text-xs">MP</span>
+                    <div className="flex-1 h-3 bg-[#2c1810] border-2 border-[#1f6032]">
+                      <div 
+                        className="h-full bg-[#32936f]"
+                        style={{ width: `${60 + (index * 10)}%` }}
+                      />
+                    </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="font-['Press_Start_2P'] text-[#ffe29a] text-xs">MP</span>
-                  <div className="flex-1 h-3 bg-[#2c1810] border-2 border-[#1f6032]">
-                    <div 
-                      className="h-full bg-[#32936f]"
-                      style={{ width: `${60 + (index * 10)}%` }}
-                    />
-                  </div>
-                </div>
-              </div>
+              )}
             </div>
           ))}
         </div>

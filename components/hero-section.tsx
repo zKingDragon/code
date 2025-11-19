@@ -65,15 +65,16 @@ export default function HeroSection() {
       <div className="absolute top-0 right-[45%] w-2 h-28 bg-gradient-to-b from-[#32936f] to-transparent opacity-55" />
 
       {/* Pixelated leaves floating */}
-      <div className="absolute top-[20%] left-[15%] w-4 h-4 bg-[#32936f] rotate-45 animate-float opacity-80" />
-      <div className="absolute top-[30%] right-[20%] w-3 h-3 bg-[#1f6032] rotate-12 animate-float opacity-70" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-[50%] left-[35%] w-5 h-5 bg-[#32936f] -rotate-45 animate-float opacity-60" style={{ animationDelay: '2s' }} />
-      <div className="absolute top-[40%] right-[40%] w-4 h-4 bg-[#1f6032] rotate-90 animate-float opacity-75" style={{ animationDelay: '1.5s' }} />
+      <div className="absolute top-[20%] left-[15%] w-4 h-4 bg-[#fcf40d] rotate-45 animate-float opacity-80" />
+      <div className="absolute top-[30%] right-[20%] w-3 h-3 bg-[#fcf40d] rotate-12 animate-float opacity-70" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-[50%] left-[35%] w-5 h-5 bg-[#fcf40d] -rotate-45 animate-float opacity-60" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-[40%] right-[40%] w-4 h-4 bg-[#fcf40d] rotate-90 animate-float opacity-75" style={{ animationDelay: '1.5s' }} />
 
+      {/* Left Palm Tree - Responsive */}
       <div 
-        className="absolute top-[10%] w-[400px] h-[400px] pointer-events-auto z-30 cursor-pointer hover:scale-105 transition-transform duration-300"
+        className="absolute top-[5%] sm:top-[10%] w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] lg:w-[400px] lg:h-[400px] pointer-events-auto z-30 cursor-pointer hover:scale-105 transition-transform duration-300"
         onMouseEnter={handleLeftPalmHover}
-        style={{ left: '-50px', transform: 'rotate(-10deg)' }}
+        style={{ left: '-30px', transform: 'rotate(-10deg)' }}
       >
         <Image
           src="/retro-pixel-palm-tree-left.png"
@@ -86,7 +87,7 @@ export default function HeroSection() {
         {leftLeaves.map(leaf => (
           <div
             key={leaf.id}
-            className="absolute top-[50%] w-5 h-5 bg-[#32936f] animate-leafFall pixelated"
+            className="absolute top-[50%] w-4 h-4 sm:w-5 sm:h-5 bg-[#32936f] animate-leafFall pixelated"
             style={{
               left: `${leaf.x}%`,
               animationDelay: `${leaf.delay}s`,
@@ -97,8 +98,9 @@ export default function HeroSection() {
         ))}
       </div>
 
+      {/* Right Palm Tree - Responsive */}
       <div 
-        className="absolute top-[10%] w-[400px] h-[400px] pointer-events-auto z-30 cursor-pointer hover:scale-105 transition-transform duration-300"
+        className="absolute top-[5%] sm:top-[10%] w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] lg:w-[400px] lg:h-[400px] pointer-events-auto z-30 cursor-pointer hover:scale-105 transition-transform duration-300"
         onMouseEnter={handleRightPalmHover}
         style={{ right: '-30px', transform: 'rotate(10deg)' }}
       >
@@ -113,7 +115,7 @@ export default function HeroSection() {
         {rightLeaves.map(leaf => (
           <div
             key={leaf.id}
-            className="absolute top-[50%] w-5 h-5 bg-[#1f6032] animate-leafFall pixelated"
+            className="absolute top-[50%] w-4 h-4 sm:w-5 sm:h-5 bg-[#1f6032] animate-leafFall pixelated"
             style={{
               left: `${leaf.x}%`,
               animationDelay: `${leaf.delay}s`,
@@ -124,13 +126,6 @@ export default function HeroSection() {
         ))}
       </div>
 
-      {/* Foreground plants at sides */}
-      <div className="absolute bottom-0 left-[15%] w-16 h-20 bg-gradient-to-t from-[#1f6032] via-[#32936f] to-transparent z-15 opacity-90" style={{
-        clipPath: 'polygon(50% 0%, 60% 20%, 80% 30%, 70% 50%, 85% 70%, 60% 80%, 50% 100%, 40% 80%, 15% 70%, 30% 50%, 20% 30%, 40% 20%)'
-      }} />
-      <div className="absolute bottom-0 right-[15%] w-16 h-20 bg-gradient-to-t from-[#1f6032] via-[#32936f] to-transparent z-15 opacity-90" style={{
-        clipPath: 'polygon(50% 0%, 65% 25%, 75% 35%, 80% 55%, 70% 75%, 55% 85%, 50% 100%, 45% 85%, 30% 75%, 20% 55%, 25% 35%, 35% 25%)'
-      }} />
 
       {/* Content */}
       <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
@@ -148,8 +143,8 @@ export default function HeroSection() {
           </Link>
         ) : (
           <Link href="/login">
-            <button className="font-['Press_Start_2P'] bg-[#d14728] hover:bg-[#32936f] text-[#ffe29a] px-8 py-4 text-sm sm:text-base border-4 border-[#1f6032] shadow-[4px_4px_0_0_rgba(31,96,50,1)] hover:shadow-[2px_2px_0_0_rgba(31,96,50,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
-              FAZER LOGIN
+            <button className="font-['Press_Start_2P'] bg-[#d14728] hover:bg-[#32936f] text-[#ffe29a] px-8 py-4 text-sm sm:text-base border-4 border-[#1f6032] shadow-[4px_4px_0_0_rgba(31,96,50,1)] hover:shadow-[2px_2px_0_0_rgba(31,96,50,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all cursor-pointer">
+              ACESSAR O JOGO
             </button>
           </Link>
         )}

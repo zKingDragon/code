@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="text-center">
           <p className="font-['Press_Start_2P'] text-[#ffe29a] text-xs mb-4">
-            JUNGLE GAME © 2025
+            CORAÇÃO DA MATA © 2025
           </p>
           <p className="font-['VT323'] text-[#32936f] text-lg">
             Desenvolvido com ♥ para amantes de jogos retrô

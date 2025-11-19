@@ -1,4 +1,4 @@
-import { Gamepad2, Trophy, Users } from 'lucide-react'
+import { Gamepad2, Puzzle, User, } from 'lucide-react'
 
 export default function AboutSection() {
   return (
@@ -42,24 +42,24 @@ export default function AboutSection() {
             <div className="bg-[#2c1810] border-4 border-[#32936f] p-6 text-center">
               <div className="flex justify-center mb-4">
                 <div className="bg-[#d14728] border-4 border-[#1f6032] p-3">
-                  <Trophy className="w-8 h-8 text-[#ffe29a]" />
+                  <Puzzle className="w-8 h-8 text-[#ffe29a]" />
                 </div>
               </div>
-              <h3 className="font-['Press_Start_2P'] text-[#ffe29a] text-xs mb-2">DESAFIOS</h3>
+              <h3 className="font-['Press_Start_2P'] text-[#ffe29a] text-xs mb-2">PUZZLE</h3>
               <p className="font-['VT323'] text-[#32936f] text-lg">
-                Missões épicas e recompensas
+                Desvende misterios com os desafios que virão
               </p>
             </div>
 
             <div className="bg-[#2c1810] border-4 border-[#32936f] p-6 text-center">
               <div className="flex justify-center mb-4">
                 <div className="bg-[#d14728] border-4 border-[#1f6032] p-3">
-                  <Users className="w-8 h-8 text-[#ffe29a]" />
+                  <User className="w-8 h-8 text-[#ffe29a]" />
                 </div>
               </div>
-              <h3 className="font-['Press_Start_2P'] text-[#ffe29a] text-xs mb-2">MULTIPLAYER</h3>
+              <h3 className="font-['Press_Start_2P'] text-[#ffe29a] text-xs mb-2">SINGLEPLAYER</h3>
               <p className="font-['VT323'] text-[#32936f] text-lg">
-                Jogue com seus amigos
+                Aventure-se sozinho na selva pixelada
               </p>
             </div>
           </div>
